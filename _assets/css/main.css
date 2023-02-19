@@ -1,0 +1,225 @@
+:root {
+    --fonte-principal: 'Roboto', sans-serif;
+    --cor-cabecalho: #fff;
+    --bg-cabecalho: #353535;
+    --cor-barra: #020202;
+    --cor-link-hover: #8c8b8c;
+    --cor-texto: #000;
+    --bg-legenda-foto: #424242;
+    --bg-card: #8c8b8c;
+    --botao-cor: #2189FF;
+    --botao-hover: #007aff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--fonte-principal);
+    padding: 0;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/*CABEÇALHO ---------------------------------------------------------------------------------------------------------------------*/
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: var(--bg-cabecalho);
+    color: var(--cor-cabecalho);
+    border-bottom: 2px solid var(--cor-barra);
+}
+
+.cabecalho__titulo {
+    text-shadow: 0px 0px 10px var(--cor-barra); 
+}
+
+.menu__lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__item {
+    list-style-type: none;
+}
+
+.menu__link {
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cor-cabecalho);
+    text-shadow: 0px 0px 10px var(--cor-barra);
+}
+
+@media screen and (min-width: 641px) {
+    .menu__lista {
+        flex-direction: row;
+        column-gap: 1em;
+    }
+}
+
+/*CONFIGURAÇÕES GERAIS  ----------------------------------------------------------------------------------------------------------------*/
+
+.sobre,
+.produtos {
+    display:flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+
+.division__bar {
+    height: 3px;
+    background-color: var(--cor-barra);
+}
+
+.section__titulo {
+    text-shadow: 0px 0px 2px var(--cor-texto);
+}
+
+.section__texto {
+    margin-top: 1em;
+}
+
+@media screen and (min-width: 641px) {
+    .sobre,
+    .produtos {
+        max-width: 1023px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sobre,
+    .produtos {
+        max-width: none;
+    }
+}
+
+/*SECTION SOBRE   ---------------------------------------------------------------------------------------------------------------------*/
+
+.sobre__img-moldura {
+    width: 100%;
+    align-self: center;
+    display:flex;
+    flex-direction: column;
+    border:1px solid var(--cor-barra);
+}
+
+.sobre__img {
+    width: 100%;
+}
+
+.sobre__img-legenda {
+    width: 100%;
+    padding:2px;
+    text-align: center;
+    background-color: var(--bg-legenda-foto);
+    color: var(--cor-cabecalho);
+    font-size: 11px;
+}
+
+.container__sobre {
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .sobre {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sobre__img-moldura {
+        width:50%;
+    }
+
+    .container__sobre {
+        width: 50%;   
+    }
+}
+
+/*SECTION PRODUTOS   -------------------------------------------------------------------------------------------------------------------*/
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    width:100%;
+}
+
+.card__produto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:var(--bg-card);
+    border-radius: 10px;
+    padding: 0.5em;
+    justify-content: space-between;
+}
+
+.produto__link {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.foto__produto {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.produto__nome {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.botao__carrinho {
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 700;
+    border: none;
+    color: var(--cor-cabecalho);
+    text-transform: uppercase;;
+    background-color: var(--botao-cor);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 641px) {
+    .card__produto {
+        width: calc(50% - 0.5em);
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .card__produto {
+        width: calc(25% - 1em);
+    }
+}
+
+/*SUBCLASSES   -------------------------------------------------------------------------------------------------------------------------*/
+
+.menu__link:hover {
+    color: var(--cor-link-hover);
+}
+
+.botao__carrinho:hover {
+    background-color: var(--botao-hover);
+}
